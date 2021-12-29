@@ -1,5 +1,5 @@
 <?php
-abstract class Modele {
+abstract class Model {
 protected $pdo;
 function __construct(){
  $this->pdo=new PDO('mysql:host=localhost;dbname=gestionTournoi','root','');
