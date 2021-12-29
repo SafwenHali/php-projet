@@ -1,0 +1,15 @@
+- tournoi (1)
+-joueur (j1)
+rel(j1 e1; j2 e1; j2 e5)
+-equipe (e1)
+
+creation joueur (modifier joueur)
+creation tournoi(modifier tournoi). si tournoi solo ADD les joueur de ce tournoi;
+                si tournoi d equipe create equipe (modifier equipe)
+                                    add joueur to equipe
+
+tournoi --> jeux  individuel ou d equipe
+            de match (pools ou qualification) ou score
+            min,max nbr d equipe ou joueur
+MATCH match (j1 VS j2)
+      match (e1 VS e2)
