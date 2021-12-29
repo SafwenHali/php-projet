@@ -1,0 +1,33 @@
+body{
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+h1{
+    
+    position: relative;
+    top: 50px;
+
+}
+div{
+    position: relative;
+    top: 100px; 
+}
+button,input{
+    height: 50px;
+    width: 350px;
+    transition-duration: 0.3s;  
+}
+button:hover {
+    background-color: #32515a; 
+    color: white;}
+
+#button1:hover{
+    background-color: #cf2b2b; 
+    color: white;}
+
+legend{
+    
+    position: relative;
+    left: 50px; 
+}
