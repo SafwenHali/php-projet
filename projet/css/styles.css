@@ -27,8 +27,18 @@ button:hover{
     background-color: #cf2b2b; 
     color: white;}
 
+p { display: inline }
+    
+.T{
+    font-size: 25px;
+    font-weight: bolder;
+}
 legend{
     
     position: relative;
     left: 50px; 
+}
+img {
+    width:270px;
+    height:120px;
 }
