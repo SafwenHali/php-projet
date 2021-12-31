@@ -9,7 +9,7 @@ class Equipe extends Model
         $this->idEq = $ID;
         $this->nomEquipe = $Name;
         $this->typeJeux = $Type;
-        parent::__construct();
+        parent::construct();
     }
     function insertEquipe($idEq, $nomEquipe, $typeJeux)
     {
@@ -24,5 +24,4 @@ class Equipe extends Model
         $res = $this->pdo->prepare($query);
         $res->execute();
         return $res;
-    }}
-?>
+    }

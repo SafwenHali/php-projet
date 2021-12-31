@@ -10,21 +10,24 @@ CREATE TABLE jeux(
 CREATE TABLE tournoi (
     idT VARCHAR(3) PRIMARY KEY,
     titreTournoi VARCHAR(20),
-    typeJeux VARCHAR(3)REFERENCES jeux(idJeux)
+    typeJeux VARCHAR(3),
+    CONSTRAINT fk_jeuxT FOREIGN KEY typeJeux REFERENCES jeux(idJeux)
 );
 
-CREATE TABLE matchJeux (
+CREATE TABLE match (
     idM VARCHAR(3) PRIMARY KEY,
     titreMatch VARCHAR(50),
-    tournoiM VARCHAR(3) REFERENCES tournoi(idT),
-    typeJeux VARCHAR(3) REFERENCES jeux(idJeux)
+    tournoiM VARCHAR(3),
+    typeJeux VARCHAR(3),
+    CONSTRAINT fk_jeuxM FOREIGN KEY typeJeux REFERENCES jeux(idJeux),
+    CONSTRAINT fk_tournoiM FOREIGN KEY tournoiM REFERENCES tournoi(idT)
 );
 
 CREATE TABLE equipe (
     idEq VARCHAR(3) PRIMARY KEY,
     nomEquipe VARCHAR(20),
-    typeJeux VARCHAR(3) REFERENCES jeux(idJeux)
-
+    typeJeux VARCHAR(3),
+CONSTRAINT fk_jeuxE FOREIGN KEY typeJeux REFERENCES jeux(idJeux),
 );
 
 CREATE TABLE joueur (
@@ -33,5 +36,6 @@ CREATE TABLE joueur (
     pnomJoueur VARCHAR(8),
     dateNaisJoueur DATE,
     telJoueur INT(8),
-    equipeJ VARCHAR(3) REFERENCES equipe(idEq)
+    equipeJ VARCHAR(3),
+    CONSTRAINT fk_equipeJ FOREIGN KEY equipeJ REFERENCES equipe(idEq)
 );

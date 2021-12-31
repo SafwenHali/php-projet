@@ -1,3 +1,5 @@
+listJeuxE()
+
 <?php
 include_once("model.php");
 class Jeux extends Model
@@ -10,16 +12,14 @@ class Jeux extends Model
         $this->nomJeux = $Name;
         $this->team = $T;
         $this->player = $P;
-        parent::__construct();
+        parent::construct();
     }
-    
     function insertJeux($idJeux, $nomJeux, $team, $player)
     {
-        $query = "INSERT INTO jeux(idJeux, nomJeux, team, player)values (?,?, ?, ?)";
+        $query = "INSERT INTO jeux(idJeux, nomJeux, team, player)values (?, ?, ?, ?)";
         $res = $this->pdo->prepare($query);
-        return $res->execute(array($idJeux, $nomJeux, $team, $player));
+        return $res->execute(array($idJeux, $nomJeux, $team, $player);
     }
-
     function deleteJoueur($idJoueur)
     {
         $query = "DELETE FROM jeux WHERE idJeux=?";
@@ -42,5 +42,4 @@ class Jeux extends Model
         $res = $this->pdo->prepare($query);
         $res->execute();
         return $res;
-    }}
-    ?>
+    }

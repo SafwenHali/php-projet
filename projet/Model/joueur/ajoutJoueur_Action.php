@@ -1,8 +1,7 @@
 <?php
 require_once('../joueur.php');
 $j=new Joueur();
-$j->insertJoueur(isset($_POST['ID']),isset($_POST['firstName']),isset($_POST['lastName']),
-                isset($_POST['birthDay']),isset($_POST['phoneNumber']),isset($_POST['Equipe']));
+$j->insertJoueur($_POST['ID'],$_POST['firstName'],$_POST['lastName'],$_POST['birthDay'],$_POST['phoneNumber'],$_POST['Equipe']);
 header('Location:../../index.html');
 ?>
 
