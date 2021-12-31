@@ -17,6 +17,9 @@
                     <input type="text" id="lastName" placeholder="Prenom Joureur" required><br>
                     <input type="date" id="birthDay" required><br>
                     <input type="tel" id="phoneNumber" placeholder="Telephone Joureur" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
+                    <select id="">
+                        <option value="DEFAULT">Selection Equipe</option>
+                    </select>
 
 
                     <br><button type="submit">Ajouter</button>

@@ -13,12 +13,13 @@ div{
     position: relative;
     top: 100px; 
 }
-button,input{
+
+select,button,input{
     height: 50px;
     width: 350px;
     transition-duration: 0.3s;  
 }
-button:hover {
+button:hover{
     background-color: #32515a; 
     color: white;}
 
