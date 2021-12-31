@@ -2,7 +2,16 @@
 abstract class Model {
 protected $pdo;
 function __construct(){
- $this->pdo=new PDO('mysql:host=localhost;dbname=gestionTournoi','root','');
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "gestionTournoi";
+    
+    try {
+        $this->pdo=new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    } catch(PDOException $e) {
+        echo $e->getMessage();
+      }
 }
 function __destruct(){
  $this->pdo=null;

@@ -16,10 +16,18 @@
                     <input type="text" id="firstName" placeholder="Nom Joureur" required><br>
                     <input type="text" id="lastName" placeholder="Prenom Joureur" required><br>
                     <input type="date" id="birthDay" required><br>
-                    <input type="tel" id="phoneNumber" placeholder="Telephone Joureur" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
-                    <select id="">
-                        <option value="DEFAULT">Selection Equipe</option>
-                    </select>
+                    <input type="tel" id="phoneNumber" placeholder="Telephone Joureur" required><br>
+                    <select id="Equipe">
+                        <option value="">Selection Equipe</option>
+                        <?php 
+                         require_once('../../model/equipe.php');
+                         $E = new Equipe();
+                         $res = $E->listEquipe();
+                         foreach ($res as $row) {
+                             echo" <option value='$row[idEquipe]'> $row[titreEquipe] </option>";
+                         };
+                        ?>
+                    </select><br>
 
 
                     <br><button type="submit">Ajouter</button>
